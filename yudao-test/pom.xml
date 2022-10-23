@@ -11,6 +11,21 @@
 
     <artifactId>yudao-test</artifactId>
 
+
+    <dependencies>
+        <!--lombok注解-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            　　<groupId>org.slf4j</groupId>
+            　　<artifactId>slf4j-simple</artifactId>
+            　　<version>1.7.25</version>
+            　　<scope>compile</scope>
+        </dependency>
+    </dependencies>
+
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>

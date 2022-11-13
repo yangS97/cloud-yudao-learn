@@ -1,4 +1,4 @@
-package cn.iocoder.yudao.module.system.design.singleton;
+package cn.iocoder.yudao.module.system.learn.design.singleton;
 
 /**
  * @author YS
@@ -9,5 +9,10 @@ public enum EnumCase {
     INSTANCE;
     public void test(){
         System.out.println("~HI");
+    }
+
+
+    public static void main(String[] args) {
+            EnumCase.INSTANCE.test();
     }
 }

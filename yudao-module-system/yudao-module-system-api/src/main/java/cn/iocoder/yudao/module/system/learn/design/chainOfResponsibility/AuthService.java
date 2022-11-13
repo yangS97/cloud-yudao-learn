@@ -1,4 +1,4 @@
-package cn.iocoder.yudao.module.system.design.chainOfResponsibility;
+package cn.iocoder.yudao.module.system.learn.design.chainOfResponsibility;
 
 import cn.hutool.core.date.DateUtil;
 

@@ -1,5 +1,6 @@
 package cn.iocoder.yudao.module.system.learn.stream;
 
+import cn.hutool.core.lang.Console;
 import io.github.vampireachao.stream.core.collector.Collective;
 import io.github.vampireachao.stream.core.stream.Steam;
 
@@ -23,7 +24,97 @@ public class StreamTest {
         //demo05();
         //demo06();
         //demo07();
-        demo08();
+        //demo08();
+        //demo09();
+        //demo10();
+        //demo11();
+        //demo12();
+        //demo13();
+        //demo14();
+        //demo15();
+        //demo16();
+        //demo17();
+        demo18();
+    }
+
+    private static void demo18() {
+        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6);
+        List<List<Integer>> lists = Steam.of(list).split(3).map(Steam::toList).toList();
+        //List<Steam<Integer>> lists = Steam.of(list).split(3).toList();
+        System.out.println("lists = " + lists);
+    }
+
+    private static void demo17() {
+        List<String> keyList = Arrays.asList(
+                "ys",
+                "gsr",
+                "zzy"
+        );
+        List<String> valueList = Arrays.asList(
+                "25",
+                "24",
+                "33"
+        );
+        List<String> zipList = Steam.of(keyList)
+                .zip(valueList, (k, v) -> k + "年龄为" + v)
+                .toList();
+        System.out.println(zipList);
+        Console.log(zipList);
+    }
+
+    private static void demo16() {
+        List<Integer> list = Arrays.asList(1, 2, 3,4,5);
+        List<Integer> spliceList = Steam.of(list).splice(3, 2, 2,3,3).toList();
+        System.out.println("spliceList = " + spliceList);
+
+        //findFirst
+        Integer integer = Steam.of(list).findFirst(e -> e > 5).orElse(1);
+        System.out.println("integer = " + integer);
+    }
+
+    private static void demo15() {
+        List<String> list = Arrays.asList("Zverify", "ys", "gsr",null);
+        String orElse = Steam.of(list).at(3).orElse("null");
+        System.out.println("orElse = " + orElse);
+    }
+
+    private static void demo14() {
+        List<String> list = Arrays.asList("Zverify", "ys", "gsr",null);
+        List<String> pushList = Steam.of(list).push("abc").nonNull().toList();
+        System.out.println("pushList = " + pushList);
+        Steam.of(list).nonNull().unshift("abc").forEach(System.out::println);
+    }
+
+    private static void demo13() {
+        List<String> list = Arrays.asList("Zverify", "ys", "gsr",null);
+        List<String> notnullList = Steam.of(list).nonNull().toList();
+        System.out.println("notnullList = " + notnullList);
+    }
+
+    private static void demo12() {
+        List<String> list = Arrays.asList("Zverify", "ys", "gsr");
+        //过滤又名叫拿到
+        List<String> filterList = Steam.of(list).filter(s -> s.length() < 3).toList();
+        System.out.println("filterList = " + filterList);
+        List<String> filterlist02 = Steam.of(list).filterIdx((e, i) -> i < 1).toList();
+        System.out.println("filterlist02 = " + filterlist02);
+    }
+
+    private static void demo11() {
+        List<String> list = Arrays.asList("Zverify", "ys", "gsr");
+        List<String> toList = Steam.of(list).flatIdx((s, i) -> Steam.of(i + 1 + "." + s)).toList();
+        System.out.println("toList = " + toList);
+    }
+
+    private static void demo10() {
+        List<String> list = Arrays.asList("Zverify", "ys", "gsr");
+        Steam.of(list).forEachIdx((s,i) -> System.out.println(i+1+","+s));
+    }
+
+    private static void demo09() {
+        List<String> list = Arrays.asList("Zverify", "Zverify", "Zverify");
+        List<String> list1 = Steam.of(list).distinct().toList();
+        System.out.println(list1);
     }
 
     private static void demo08() {

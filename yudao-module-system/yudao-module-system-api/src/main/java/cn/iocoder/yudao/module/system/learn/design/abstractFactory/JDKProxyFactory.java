@@ -12,5 +12,7 @@ public class JDKProxyFactory {
         JDKInvocationHandler handler = new JDKInvocationHandler(cacheAdapter.newInstance());
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         return (T) Proxy.newProxyInstance(classLoader,new Class[]{cacheClass},handler);
+
+
     }
 }

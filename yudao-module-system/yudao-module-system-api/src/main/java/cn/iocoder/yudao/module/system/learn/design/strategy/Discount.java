@@ -7,6 +7,6 @@ import java.math.BigDecimal;
  * @date 2022/12/1 22:00
  * @Description
  */
-public interface IDiscount<T> {
+public interface Discount<T> {
     BigDecimal discountAmount(T couponInfo,BigDecimal skuPrice);
 }

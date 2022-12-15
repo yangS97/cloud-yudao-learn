@@ -1,4 +1,7 @@
-package cn.iocoder.yudao.module.system.learn.design.strategy;
+package cn.iocoder.yudao.module.system.learn.design.strategy.impl;
+
+import cn.iocoder.yudao.module.system.learn.design.strategy.Discount;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
@@ -7,7 +10,8 @@ import java.math.BigDecimal;
  * @date 2022/12/1 22:01
  * @Description
  */
-public class ZJDiscount implements IDiscount<Double>{
+@Component
+public class ZJDiscount implements Discount<Double> {
 
     @Override
     public BigDecimal discountAmount(Double couponInfo, BigDecimal skuPrice) {

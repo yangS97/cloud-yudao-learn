@@ -7,10 +7,11 @@ import java.math.BigDecimal;
  * @date 2022/12/1 22:39
  * @Description
  */
-public class Context<T> {
-    private IDiscount<T> discount;
 
-    public Context(IDiscount<T> discount) {
+public class Context<T> {
+    private Discount<T> discount;
+
+    public Context(Discount<T> discount) {
         this.discount = discount;
     }
 

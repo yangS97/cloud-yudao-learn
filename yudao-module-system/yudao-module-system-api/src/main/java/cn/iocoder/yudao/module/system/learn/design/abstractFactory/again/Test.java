@@ -25,5 +25,7 @@ public class Test {
         OssVideo video1 = factory1.updateVideo(null);
         System.out.println("video1.get720p() = " + video1.get720p());
         System.out.println("video1.get1080p() = " + video1.get1080p());
+
+        System.out.println("this is  now github projetc");
     }
 }

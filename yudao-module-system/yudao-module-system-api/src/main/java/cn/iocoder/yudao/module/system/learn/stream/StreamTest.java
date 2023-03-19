@@ -197,4 +197,7 @@ public class StreamTest {
         //integers.stream()
         Steam<Integer> of = Steam.of(integers);
     }
+
+
+
 }
